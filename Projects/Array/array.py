@@ -1,10 +1,5 @@
 """Arrays are collections of a finite number of homogeneous elements, each identified by an index or key."""
 # বাংলা : অ্যারে হল একটি সীমিত সংখ্যক সমান উপাদানের সংগ্রহ, প্রতিটি উপাদান একটি সূচক বা কী দ্বারা চিহ্নিত।
-# Array integer value take 4 bytes of memory
-# Array float value take 8 bytes of memory
-# Array character value take 1 bytes of memory
-# Array boolean value take 1 bytes of memory
-# Array string value take 1 bytes of memory
 
 # Array in Python programming
 import sys

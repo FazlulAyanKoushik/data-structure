@@ -2,6 +2,7 @@
 ##### ----------------------------------------------
 
 ### 1. Arrays in Data Structure
+### 2. Linked List in Data Structure
 Recursion and Backtracking in DS Part 1
 Chapter-4 Recursion and Backtracking Part 2
 Chapter-5 Program of Tower of Hanoi 

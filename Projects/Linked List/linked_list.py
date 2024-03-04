@@ -81,7 +81,6 @@ class LinkedList:
             itr = itr.next
             count += 1
 
-
     def print(self):
         if self.head is None:
             print("Linked List is empty")

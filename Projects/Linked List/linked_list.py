@@ -28,6 +28,60 @@ class LinkedList:
         node = Node(data, self.head)
         self.head = node
 
+    def insert_at_end(self, data):
+        if self.head is None:
+            self.head = Node(data, None)
+            return
+
+        itr = self.head
+        # Traverse the linked list to find the last node
+        while itr.next:
+            itr = itr.next
+        itr.next = Node(data, None)  # itr.next will be None, and we will create a new node and assign it to itr.next
+
+    def insert_values(self, data_list):
+        self.head = None
+        for data in data_list:
+            self.insert_at_end(data)
+
+    def insert_at_index(self, index, data):
+        if index < 0 or index >= self.get_length():
+            raise Exception("Invalid index")
+
+        if index == 0:
+            self.insert_at_beginning(data)
+            return
+
+        count = 0
+        itr = self.head
+        while itr:
+            if count == index - 1:
+                node = Node(data, itr.next)
+                itr.next = node
+                break
+
+            itr = itr.next
+            count += 1
+
+    def remove_at_index(self, index):
+        if index < 0 or index >= self.get_length():
+            raise Exception("Invalid index")
+
+        if index == 0:
+            self.head = self.head.next
+            return
+
+        count = 0
+        itr = self.head
+        while itr:
+            if count == index - 1:
+                itr.next = itr.next.next
+                break
+
+            itr = itr.next
+            count += 1
+
+
     def print(self):
         if self.head is None:
             print("Linked List is empty")
@@ -38,16 +92,27 @@ class LinkedList:
             suffix = ' --> '
             if itr.next is None:
                 llstr += f"{str(itr.data)} [None]"
-                break
             else:
                 llstr += f"{str(itr.data)}, [{str(itr.next)}]" + suffix
-            itr = itr.next
+            itr = itr.next  # Move to next node and when we reach the last node, itr will be None and the loop will break
         print(llstr)
+
+    def get_length(self):
+        count = 0
+        itr = self.head
+        while itr:
+            count += 1
+            itr = itr.next
+        return count
 
 
 if __name__ == "__main__":
     ll = LinkedList()
     ll.insert_at_beginning(5)
-    ll.insert_at_beginning(89)
-    ll.insert_at_beginning(12)
+    ll.insert_at_end(79)
+    ll.insert_at_end(80)
+    ll.insert_at_end(105)
+    ll.insert_at_index(3, 100)
+    ll.remove_at_index(1)
     ll.print()
+    print("Length:", ll.get_length())

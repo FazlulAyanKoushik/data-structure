@@ -112,6 +112,6 @@ if __name__ == "__main__":
     ll.insert_at_end(80)
     ll.insert_at_end(105)
     ll.insert_at_index(3, 100)
-    ll.remove_at_index(1)
+    # ll.remove_at_index(1)
     ll.print()
     print("Length:", ll.get_length())
